@@ -1,8 +1,8 @@
 angular.module('swiftAlert')
     .controller('loginController', ['$location', 'Auth', function($location, Auth) {
-        var vm = this;
+        var si = this;
 
-       vm.login = login;
+       si.login = login;
 
        initController();
 
@@ -12,14 +12,15 @@ angular.module('swiftAlert')
        };
 
        function login() {
-           vm.loading = true;
-           Auth.Login(vm.username, vm.password, function (result) {
+           si.loading = true;
+           Auth.Login(si.username, si.password, function (result) {
                if (result === true) {
                    $location.path('/');
                } else {
-                   vm.error = 'Username or password is incorrect';
-                   vm.loading = false;
+                   si.error = 'Username or password is incorrect';
+                   si.loading = false;
                }
            });
        };
+
     }]);

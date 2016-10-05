@@ -1,0 +1,49 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href=".">Swift Alert</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="true">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a><div class="dropdown-backdrop"></div>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li ui-sref-active="active"><a ui-sref=".settings"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="#" ng-click="dash.logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li ui-sref-active="active"><a ui-sref=".sendbulk">Send Bulk Message</a></li>
+                <li ui-sref-active="active"><a ui-sref=".send">Send</a></li>
+                <li ui-sref-active="active"><a ui-sref=".groups">Groups</a></li>
+                <li ui-sref-active="active"><a ui-sref=".reports">Reports</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li ui-sref-active="active"><a ui-sref=".settings">Settings</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

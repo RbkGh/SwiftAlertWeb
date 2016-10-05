@@ -24,6 +24,7 @@
 
                         // add jwt token to auth header for all requests made by the $http service
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.responseObject.token;
+                        // $http.defaults.headers.common.Accept = 'application/x-www-form-urlencoded';
 
                         // execute callback with true to indicate successful login
                         callback(true);
