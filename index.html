@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="swiftAlert">
     <head>
+        <base href="/" />
         <meta charset="utf-8">
         <title>Swift Alert</title>
-        <link rel="stylesheet" href="assets/libs/normalize/normalize.css">
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/css/signinform.css">
+        <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/signinform.css" />
     </head>
     <body>
         <ui-view></ui-view>
 
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="assets/libs/jquery/jquery.js"></script>
+        <script src="assets/libs/bootstrap/js/bootstrap.js"></script>
+
         <script src="assets/libs/angular/angular.js"></script>
         <script src="assets/libs/angular-ui-router/angular-ui-router.js"></script>
         <script src="assets/libs/angular/angular-cookies.js"></script>
-        <script src="assets/libs/angular/angula-sanitizer.js"></script>
+        <script src="assets/libs/angular/angular-sanitize.js"></script>
         <script src="assets/libs/angular/angular-animate.js"></script>
 
         <script src="app.module.js"></script>
         <script src="app.routes.js"></script>
-
-        <script src="components/signin/signinController.js"></script>
+        <script src="components/login/loginController.js"></script>
         <script src="components/home/homeController.js"></script>
-
-        <script src="components/signin/signiServicer.js"></script>
+        <script src="components/auth/Auth.js"></script>
     </body>
 </html>
