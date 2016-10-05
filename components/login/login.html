@@ -1,20 +1,23 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4 form-wrapper">
-            <form class="" ng-submit="">
+            <form id="loginForm" name="loginForm" class="form-horizontal" ng-submit="">
                 <h3 class="text-center">Login</h3>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" autofocus>
+                    <input type="text" name="username" class="form-control" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control">
+                    <input type="password" name="password" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                    <button type="submit" class="btn btn-primary btn-block"><h5>Login</h5></button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$("#loginForm").validate();
+</script>
