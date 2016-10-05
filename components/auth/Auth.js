@@ -15,15 +15,15 @@
         return service;
 
         function Login(username, password, callback) {
-            $http.post(ROOt+'/auth', { userName: username, password: password })
+            $http.post(ROOT+'/auth', { userName: username, password: password })
                 .success(function (response) {
                     // login successful if there's a token in the response
-                    if (response.token) {
+                    if (response && response.responseObject && response.responseObject.token) {
                         // store username and token in local storage to keep user logged in between page refreshes
-                        $localStorage.currentUser = { username: username, token: response.token };
+                        $localStorage.currentUser = response.responseObject;
 
                         // add jwt token to auth header for all requests made by the $http service
-                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.responseObject.token;
 
                         // execute callback with true to indicate successful login
                         callback(true);

@@ -14,6 +14,7 @@
                  name: 'login',
                  url: '/login',
                  controller: 'loginController',
+                 controllerAs: 'si',
                  templateUrl: 'components/login/login.html'
               }
 

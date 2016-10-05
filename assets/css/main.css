@@ -28,3 +28,9 @@ body {
 .error {
     color: #911;
 }
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
