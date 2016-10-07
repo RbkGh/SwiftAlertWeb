@@ -2,8 +2,6 @@ angular.module('swiftAlert')
     .controller('sendbulkController', ['$location', 'Auth', 'Groups', 'Messages', '$localStorage', '$timeout', function($location, Auth, Groups, Messages, $localStorage, $timeout) {
         var sb = this;
 
-
-
         sb.send = send;
 
         initController();

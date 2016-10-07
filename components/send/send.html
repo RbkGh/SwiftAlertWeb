@@ -1,5 +1,29 @@
-<div class="col-md-8 col-md-offset-2 form-wrapper">
-    <form id="sendForm" name="sendForm" class="form-horizontal" ng-submit="sendForm.$valid && send.login()">
-        <h3 class="text-center">Send SMS</h3>
+<div class="col-md-6 col-md-offset-3 form-wrapper">
+    <form id="sendForm" name="sendForm" class="form-horizontal" ng-submit="sendForm.$valid && snd.send()">
+        <h3 class="text-center title">Send Single SMS</h3>
+        <div class="alert alert-success" ng-if="snd.smessage">
+            {{snd.smessage}}
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
+        <div class="alert alert-danger" ng-if="snd.emessage">
+            {{snd.emessage}}
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="text" name="senderid" ng-model="snd.senderid" placeholder="Sender Name" autofocus required>
+        </div>
+        <div class="form-group">
+            <textarea name="message" rows="8" ng-model="snd.message" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="tel" name="recievernumber" ng-model="snd.recievernumber" placeholder="Recipient Number" autofocus required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" ng-disabled="snd.sending">
+                <h5>Send Message</h5>
+                <img ng-if="snd.sending" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </button>
+        </div>
     </div>
 </div>

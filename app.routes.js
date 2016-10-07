@@ -26,7 +26,7 @@
                 .state('dash.send', {
                     url: 'send',
                     controller: 'sendController',
-                    controllerAs: 'send',
+                    controllerAs: 'snd',
                     templateUrl: 'components/send/send.html'
                 })
                 .state('dash.groups', {
