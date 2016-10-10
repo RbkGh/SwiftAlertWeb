@@ -13,7 +13,18 @@
 
         return service;
 
-        function getGroups(username, callback) {
+        function getGroups(username) {
+          return $http({
+                      method: 'GET',
+                      url: ROOT+'/api/v2/groups/'+username,
+                      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+              }).then(
+                  function success(response) {
+                      return response.data;
+                  },
+                  function fail(e) {
+                      return e;
+              });
             // $.get( ROOT+'/api/v2/groups/'+username, function( response ) {
             //     if (response) {
             //         console.log(response);
@@ -22,20 +33,20 @@
             //         callback(false);
             //     }
             // });
-            var settings = {
-              "async": true,
-              "crossDomain": true,
-              "url": "http://212.111.42.10:8080/swiftalertmain/api/v2/groups/"+username,
-              "method": "GET",
-              "headers": {
-                "authorization": 'Bearer ' + $localStorage.currentUser.token,
-                "content-type": "application/x-www-form-urlencoded"
-              }
-            }
-
-            $.ajax(settings).done(function (response) {
-              callback(response.responseObject);
-            });
+            // var settings = {
+            //   "async": true,
+            //   "crossDomain": true,
+            //   "url": "http://212.111.42.10:8080/swiftalertmain/api/v2/groups/"+username,
+            //   "method": "GET",
+            //   "headers": {
+            //     "authorization": 'Bearer ' + $localStorage.currentUser.token,
+            //     "content-type": "application/x-www-form-urlencoded"
+            //   }
+            // }
+            //
+            // $.ajax(settings).done(function (response) {
+            //   callback(response.responseObject);
+            // });
 
             // console.log($http.defaults.headers);
             // $http.defaults.headers.get["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8;";
