@@ -17,12 +17,15 @@
           return $http({
                       method: 'GET',
                       url: ROOT+'/api/v2/groups/'+username,
-                      headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                      data:{}
               }).then(
                   function success(response) {
-                      return response.data;
+                    console.log(response);
+                      return response.data.responseObject;
                   },
                   function fail(e) {
+                    console.log(e);
                       return e;
               });
             // $.get( ROOT+'/api/v2/groups/'+username, function( response ) {
