@@ -1,1 +1,70 @@
-<h1>Groups</h1>
+<table class="table table-striped">
+    <thead>
+        <th>
+            Group Name
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="group in grp.groups">
+            <td>
+                {{group.groupName}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="grp.editGroup('{{group.groupId}}', '{{group.groupName}}')"><i class="fa fa-edit"></i></button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup('{{group.groupId}}', '{{group.groupName}}')"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div id="editGroup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Update Group, {{grp.groupToBeEditeddName}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="Group Name"></label>
+                    <input type="text" name="groupToBeEditeddName"ng-model="grp.groupToBeEditeddName">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Update</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="deleteGroup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Delete Group, {{grp.groupToBeDeletedName}}</h4>
+            </div>
+            <div class="modal-body">
+                Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
