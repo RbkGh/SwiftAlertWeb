@@ -56,7 +56,7 @@
             </td>
             <td>
                 <button type="button" class="btn btn-primary" ng-click="gr.editContact($event)"
-                        data-contactid="{{contact.id}}"><i class="fa fa-edit"></i></button>
+                        data-contactid="{{contact.id}}" data-firstname="{{contact.firstName}}" data-lastname="{{contact.lastName}}" data-phonenumber="{{contact.contactPhoneNum}}"><i class="fa fa-edit"></i></button>
             </td>
             <td>
                 <button type="button" class="btn btn-danger" ng-click="gr.deleteContact($event)"
@@ -83,15 +83,15 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" name="groupContactFirstName" class="form-control"
-                               ng-model="gr.firstNameInTemplate" autofocus placeholder="FirstName eg. John">
+                               ng-model="gr.firstNameInTemplate" autofocus placeholder="First Name eg. John">
                     </div>
                     <div class="form-group">
                         <input type="text" name="groupContactLastName" class="form-control"
-                               ng-model="gr.lastNameInTemplate" autofocus placeholder="LastName eg. Akuffo">
+                               ng-model="gr.lastNameInTemplate" autofocus placeholder="Last Name eg. Akuffo">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="groupContactPhoneNumber" class="form-control"
-                               ng-model="gr.phoneNumberInTemplate" autofocus placeholder="PhoneNumber eg. 0267777830">
+                        <input type="tel" name="groupContactPhoneNumber" class="form-control"
+                               ng-model="gr.phoneNumberInTemplate" autofocus placeholder="Phone Number eg. 0267777830">
                     </div>
                 </div>
 
@@ -102,5 +102,36 @@
                 </div>
             </form>
         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="editContact" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content" ng-submit="gr.editContactConfirm()">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Update Contact, {{gr.contactToBeEditedFirstName}} {{gr.contactToBeEditedLastName}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="contactToBeEditedFirstName">First Name</label>
+                    <input type="text" name="contactToBeEditedFirstName" class="form-control" ng-model="gr.contactToBeEditedFirstName" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="contactToBeEditedLastName">Last Name</label>
+                    <input type="text" name="contactToBeEditedLastName" class="form-control" ng-model="gr.contactToBeEditedLastName" autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="contactToBeEditedPhoneNumber">Phone Number</label>
+                    <input type="tel" name="contactToBeEditedPhoneNumber" class="form-control" ng-model="gr.contactToBeEditePhoneNumber" autofocus>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-warning" id="update">Update</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </form>
     </div>
 </div>

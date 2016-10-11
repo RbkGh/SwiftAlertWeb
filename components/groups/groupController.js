@@ -4,10 +4,10 @@ angular.module('swiftAlert')
         gr.params = $stateParams;
         gr.addGroupContact = addGroupContact;
         gr.addGroupContactConfirm = addGroupContactConfirm;
+        gr.editContact = editContact;
 
         initController();
         getGroupInfo()
-        console.log(gr.group);
         function initController() {
             Contacts.getGroupContacts(gr.params.groupid)
                 .then(function (contacts) {
@@ -85,5 +85,11 @@ angular.module('swiftAlert')
                 });
         }
 
+        function editContact($event) {
+            gr.contactToBeEditedFirstName = $($event.currentTarget).attr('data-firstname');
+            gr.contactToBeEditedLastName = $($event.currentTarget).attr('data-lastname');
+            gr.contactToBeEditePhoneNumber = $($event.currentTarget).attr('data-phonenumber');
+            $('#editContact').modal('show');
+        }
 
     }]);
