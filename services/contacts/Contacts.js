@@ -41,7 +41,7 @@
                         data:data
                 }).then(
                     function success(response) {
-                        return response.data.responseObject;
+                        return response.data;
                     },
                     function fail(e) {
                       console.log(e);

@@ -19,6 +19,16 @@ angular.module('swiftAlert')
                 });
         };
 
+        // function initController() {
+        //     Groups.get($localStorage.currentUser.userName)
+        //         .then(function (groups) {
+        //            grp.groups = groups;
+        //         })
+        //         .catch(function(response) {
+        //             console.error('Error', response.status, response.data);
+        //         });
+        // };
+
         function addGroupContact() {
             $('#addGroupContact').modal('show');
         }
@@ -33,8 +43,10 @@ angular.module('swiftAlert')
             }
             Contacts.createGroupContact(data)
                 .then(function (response) {
+
                     if (response) {
                         if (response.status == 11) {
+                            console.log(response.message);
                             gr.emessage = response.message;
                         } else {
                             gr.smessage = response.message;
