@@ -1,105 +1,113 @@
 
+<div class="col-md-8 col-md-offset-2">
     <div class="alert alert-success text-center" ng-if="grp.smessage">
-        {{grp.smessage}}
+            {{grp.smessage}}
     </div>
     <div class="alert alert-danger text-center" ng-if="grp.emessage">
-        {{grp.emessage}}
+            {{grp.emessage}}
     </div>
-<div class="">
-    <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()">Add Group</button>
-</div>
-<table class="table table-striped">
-    <thead>
-        <th>
-            Group Name
-        </th>
-        <th>
-            Edit
-        </th>
-        <th>
-            Delete
-        </th>
-    </thead>
-    <tbody>
-        <tr ng-repeat="group in grp.groups">
-            <td>
-                {{group.groupName}}
-            </td>
-            <td>
-                <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}" ><i class="fa fa-edit"></i></button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}"><i class="fa fa-trash"></i></button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <div class="">
+        <button type="button" class="btn btn-primary pull-left" ng-click="grp.addGroup()"><i class="fa fa-upload"></i> Upload</button>
+        <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()"><i class="fa fa-plus"></i> Add Group</button>
+    </div>
+    <br>
+    <br>
+    <table class="table table-condensed ">
+        <thead>
+            <tr class="info">
+                <th>
+                    Group Name
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
 
-<!-- Modal -->
-<div id="editGroup" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form class="modal-content" ng-submit="grp.editGroupConfirm()">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Update Group, {{grp.groupToBeEditedName}}</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="Group Name"></label>
-                    <input type="text" name="groupToBeEditeddName" class="form-control" ng-model="grp.groupToBeEditedName" autofocus>
+        </thead>
+        <tbody>
+            <tr ng-repeat="group in grp.groups" class="active">
+                <td>
+                    {{group.groupName}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}" ><i class="fa fa-edit"></i></button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Modal -->
+    <div id="editGroup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form class="modal-content" ng-submit="grp.editGroupConfirm()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update Group, {{grp.groupToBeEditedName}}</h4>
                 </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Group Name"></label>
+                        <input type="text" name="groupToBeEditeddName" class="form-control" ng-model="grp.groupToBeEditedName" autofocus>
+                    </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-warning" id="delete">Update</button>
-                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-            </div>
-        </form>
-    </div>
-</div>
-
-<!-- Modal -->
-<div id="addGroup" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form class="modal-content" ng-submit="grp.addGroupConfirm()">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add a new Group</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="Group Name"></label>
-                    <input type="text" name="groupToBeAddeddName" class="form-control" ng-model="grp.groupToBeAddeddName" autofocus>
                 </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-success" id="delete">Add</button>
-                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-            </div>
-        </form>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning" id="delete">Update</button>
+                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<!-- Modal -->
-<div id="deleteGroup" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <form class="modal-content" ng-submit="grp.deleteGroupConfirm()">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Delete Group, {{grp.groupToBeDeletedName}}</h4>
-            </div>
-            <div class="modal-body">
-                All contacts will be deleted as well.
-                Are you sure?
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-danger" id="delete">Delete</button>
-                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
-            </div>
-        </form>
+    <!-- Modal -->
+    <div id="addGroup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form class="modal-content" ng-submit="grp.addGroupConfirm()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add a new Group</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Group Name"></label>
+                        <input type="text" name="groupToBeAddeddName" class="form-control" ng-model="grp.groupToBeAddeddName" autofocus>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="delete">Add</button>
+                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="deleteGroup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form class="modal-content" ng-submit="grp.deleteGroupConfirm()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Group, {{grp.groupToBeDeletedName}}</h4>
+                </div>
+                <div class="modal-body">
+                    All contacts will be deleted as well.
+                    Are you sure?
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" id="delete">Delete</button>
+                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
