@@ -34,12 +34,20 @@ angular.module('swiftAlert')
                         grp.smessage = response.message;
                     }
                     $('#addGroup').modal('hide');
-                    initController()
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
                 })
                 .catch(function(response) {
                     grp.emessage = 'An error occured try again';
                     grp.sending = false;
-                    initController()
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
                 });
         }
 
@@ -68,12 +76,20 @@ angular.module('swiftAlert')
                         grp.smessage = response.message;
                     }
                     $('#editGroup').modal('hide');
-                    initController()
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
                 })
                 .catch(function(response) {
                     grp.emessage = 'An error occured try again';
                     grp.sending = false;
-                    initController()
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
                 });
         };
         function deleteGroup($event) {
