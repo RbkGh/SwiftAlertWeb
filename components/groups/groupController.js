@@ -15,4 +15,6 @@ angular.module('swiftAlert')
                     console.error('Error', response.status, response.data);
                 });
         };
+
+
     }]);

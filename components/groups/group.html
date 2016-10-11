@@ -25,6 +25,9 @@
                     Last Name
                 </th>
                 <th>
+                    Mobile Number
+                </th>
+                <th>
                     Edit
                 </th>
                 <th>
@@ -40,6 +43,9 @@
                 </td>
                 <td>
                     {{contact.lastName}}
+                </td>
+                <td>
+                    {{contact.contactPhoneNum}}
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" ng-click="gr.editContact($event)" data-contactid="{{contact.id}}"><i class="fa fa-edit"></i></button>

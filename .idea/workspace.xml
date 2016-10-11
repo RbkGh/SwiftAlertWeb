@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63422f80-69c3-461c-9741-ceaebbb85d1d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/groups/groupsController.js" afterPath="$PROJECT_DIR$/components/groups/groupsController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/groups/group.html" afterPath="$PROJECT_DIR$/components/groups/group.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/groups/groupController.js" afterPath="$PROJECT_DIR$/components/groups/groupController.js" />
     </list>
     <ignored path="swiftalert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,61 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Auth.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/auth/Auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sendbulkController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/sendbulk/sendbulkController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Groups.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/groups/Groups.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="groupsController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="groupsController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/groups/groupsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+            <state relative-caret-position="131">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <marker date="1476191593067" expanded="true" signature="5733:5743" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="group.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/groups/group.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="groups.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/groups/groups.html">
+      <file leaf-file-name="groupController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/groups/groupController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Messages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/services/messages/Messages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -101,8 +75,10 @@
         <option value="$PROJECT_DIR$/services/auth/Auth.js" />
         <option value="$PROJECT_DIR$/services/groups/Groups.js" />
         <option value="$PROJECT_DIR$/components/sendbulk/sendbulkController.js" />
-        <option value="$PROJECT_DIR$/components/groups/groups.html" />
         <option value="$PROJECT_DIR$/components/groups/groupsController.js" />
+        <option value="$PROJECT_DIR$/components/groups/groups.html" />
+        <option value="$PROJECT_DIR$/components/groups/groupController.js" />
+        <option value="$PROJECT_DIR$/components/groups/group.html" />
       </list>
     </option>
   </component>
@@ -362,15 +338,15 @@
       <workItem from="1475672546128" duration="2912000" />
       <workItem from="1475687205910" duration="1716000" />
       <workItem from="1475762308621" duration="5000" />
-      <workItem from="1476125167715" duration="11886000" />
+      <workItem from="1476125167715" duration="13038000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16519000" />
+    <option name="totallyTimeSpent" value="17671000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="22" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2473997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -574,7 +550,7 @@
     <entry file="file://$PROJECT_DIR$/components/sendbulk/sendbulkController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -595,26 +571,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/groups/groups.html">
+    <entry file="file://$PROJECT_DIR$/services/groups/Groups.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+          <folding>
+            <marker date="1476191593086" expanded="true" signature="2293:2561" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/groups/Groups.js">
+    <entry file="file://$PROJECT_DIR$/components/groups/groups.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="220">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+          <folding>
+            <element signature="e#2214#2221#0" expanded="true" />
+            <element signature="e#3315#3322#0" expanded="true" />
+            <element signature="e#4389#4396#0" expanded="true" />
+            <element signature="e#5322#5329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/groups/groupController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/groups/groupsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+        <state relative-caret-position="131">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <marker date="1476191593067" expanded="true" signature="5733:5743" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/groups/group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
           <folding />
         </state>
       </provider>
