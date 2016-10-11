@@ -32,7 +32,6 @@ angular.module('swiftAlert')
                 groupName: grp.groupToBeEditedName,
                 dateCreated: grp.dateCreated
             }
-            console.info("data = "+JSON.stringify(data));
 
             Groups.update(data)
                 .then(function (response) {
@@ -43,11 +42,12 @@ angular.module('swiftAlert')
                         grp.smessage = response.message;
                     }
                     $('#editGroup').modal('hide');
-
+                    initController()
                 })
                 .catch(function(response) {
                     grp.emessage = 'An error occured try again';
                     grp.sending = false;
+                    initController()
                 });
         };
         function deleteGroup($event) {
