@@ -8,7 +8,51 @@
             {{gr.emessage}}
     </div>
     <div>
-        <button type="button" class="btn btn-primary pull-left" ng-click="grp.uploadGroups()"><i class="fa fa-upload"></i> Upload Contacts</button>
+        <button type="button" class="btn btn-primary pull-left" onclick="window.history.back();"><i class="fa fa-arrow-left"></i> Go Back</button>
         <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()"><i class="fa fa-plus"></i> Add Contact</button>
+        <button type="button" class="btn btn-primary pull-right" ng-click="grp.uploadGroups()"><i class="fa fa-upload" style="padding-left:5px"></i> Upload Contacts</button>
     </div>
+
+    <br>
+    <br>
+    <table class="table table-condensed ">
+        <thead>
+            <tr class="info">
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in gr.contacts" class="active">
+                <td>
+                    {{contact.firstName}}
+                </td>
+                <td>
+                    {{contact.lastName}}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" ng-click="gr.editContact($event)" data-contactid="{{contact.id}}"><i class="fa fa-edit"></i></button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" ng-click="gr.deleteContact($event)" data-contactid="{{contact.id}}"><i class="fa fa-trash"></i></button>
+                </td>
+            </tr>
+            <tr ng-show="!gr.contacts.length" class="text-center">
+                <td>
+                    <h4>No contact here</h4>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

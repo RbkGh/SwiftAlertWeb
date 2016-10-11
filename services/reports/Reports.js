@@ -14,15 +14,19 @@
 
         return service;
 
-        function GetAll(userName, callback) {
-            $http.get(ROOT+'/messages/report/'+userName)
-                .success(function (response) {
-                    if (response) {
-                        callback(response);
-                    }
-                }).
-                error(function (err){
-                    callback(false);
+        function get(userName) {
+            return $http({
+                        method: 'GET',
+                        url: ROOT+'/messages/reports/'+userName,
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        data:{}
+                }).then(
+                    function success(response) {
+                        return response.data.responseObject;
+                    },
+                    function fail(e) {
+                      console.log(e);
+                        return e;
                 });
         }
         function GetByMessageId(messageid, callback) {
