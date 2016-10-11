@@ -1,4 +1,4 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
     <h3 class="text-center title">Reports</h3>
     <div class="alert alert-success text-center" ng-if="rep.smessage">
         {{rep.smessage}}
@@ -9,7 +9,7 @@
 
     <br>
     <br>
-    <table class="table table-condensed ">
+    <table class="table table-condensed">
         <thead>
         <tr class="info">
             <th>
@@ -34,7 +34,7 @@
 
         </thead>
         <tbody>
-        <tr ng-repeat="report in rep.reports" class="active">
+        <tr ng-repeat="report in rep.reports" class="active clickable-row" data-messageid="{{report.messageId}}" ng-click="rep.viewReport($event)">
             <td>
                 {{report.dateCreated}}
             </td>
@@ -52,7 +52,7 @@
             </td>
             <td>
                 {{report.id}}
-            </td
+            </td>
         </tr>
         <tr ng-show="!rep.reports.length" class="text-center">
             <td>

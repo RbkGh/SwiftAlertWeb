@@ -1,0 +1,50 @@
+<div class="col-md-10 col-md-offset-1">
+    <h3 class="text-center title">Detailed Report</h3>
+    <div class="alert alert-success text-center" ng-if="rep.smessage">
+        {{rept.smessage}}
+    </div>
+    <div class="alert alert-danger text-center" ng-if="rep.emessage">
+        {{rept.emessage}}
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary pull-left" onclick="window.history.back();"><i
+                class="fa fa-arrow-left"></i> Go Back
+        </button>
+    </div>
+    <br>
+    <br>
+    <table class="table table-condensed ">
+        <thead>
+        <tr class="info">
+            <th>
+                Date
+            </th>
+            <th>
+                Recipient
+            </th>
+            <th>
+                Delivered
+            </th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="report in rept.dreport" class="active">
+            <td>
+                {{report.dateCreated}}
+            </td>
+            <td>
+                {{report.recipientNum}}
+            </td>
+            <td>
+                {{report.deliveryStatus}}
+            </td>
+        </tr>
+        <tr ng-show="!rept.dreport.length" class="text-center">
+            <td>
+                <h4>No report here.</h4>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

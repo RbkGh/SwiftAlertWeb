@@ -46,6 +46,12 @@
                     controller: 'reportsController',
                     controllerAs: 'rep',
                     templateUrl: 'components/reports/reports.html'
+                })
+                .state('dash.report', {
+                    url: 'reports/:messageid',
+                    controller: 'reportController',
+                    controllerAs: 'rept',
+                    templateUrl: 'components/reports/report.html'
                 });
                 // .state('dash.settings', {
                 //     url: 'settings',

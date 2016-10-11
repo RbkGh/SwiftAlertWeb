@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="swiftAlert">
     <head>
+        <style media="screen">
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+        </style>
         <base href="/" />
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +17,7 @@
         <link rel="stylesheet" href="assets/css/signinform.css" />
         <link rel="stylesheet" href="assets/css/main.css" />
     </head>
-    <body>
+    <body class="ng-cloak">
 
         <ui-view></ui-view>
 
@@ -39,6 +44,7 @@
         <script src="components/groups/groupController.js"></script>
         <script src="components/groups/groupsController.js"></script>
         <script src="components/reports/reportsController.js"></script>
+        <script src="components/reports/reportController.js"></script>
         <script src="components/settings/settingsController.js"></script>
 
         <script src="services/auth/Auth.js"></script>

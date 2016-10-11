@@ -34,3 +34,6 @@ body {
 .btn,.modal-content {
     border-radius: 0;
 }
+.clickable-row {
+    cursor: pointer;
+}
