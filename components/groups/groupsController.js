@@ -3,8 +3,9 @@ angular.module('swiftAlert')
         var grp = this;
         initController();
         grp.editGroup = editGroup;
-        grp.deleteGroup = deleteGroup;
         grp.editGroupConfirm = editGroupConfirm;
+        grp.addGroup = addGroup;
+        grp.addGroupConfirm = addGroupConfirm;
 
         function initController() {
             Groups.get($localStorage.currentUser.userName)
@@ -15,6 +16,32 @@ angular.module('swiftAlert')
                     console.error('Error', response.status, response.data);
                 });
         };
+
+        function addGroup() {
+            $('#addGroup').modal('show');
+        }
+        function addGroupConfirm() {
+            data = {
+                userName: $localStorage.currentUser.userName,
+                groupName: grp.groupToBeAddeddName
+            }
+
+            Groups.create(data)
+                .then(function (response) {
+                    if (response.status == 11) {
+                        grp.emessage = response.message;
+                    } else {
+                        grp.smessage = response.message;
+                    }
+                    $('#addGroup').modal('hide');
+                    initController()
+                })
+                .catch(function(response) {
+                    grp.emessage = 'An error occured try again';
+                    grp.sending = false;
+                    initController()
+                });
+        }
 
         function editGroup($event) {
             grp.groupToBeEditedId = $($event.currentTarget).attr('data-groupid');
@@ -36,7 +63,6 @@ angular.module('swiftAlert')
             Groups.update(data)
                 .then(function (response) {
                     if (response.status == 11) {
-                        console.log(response);
                         grp.emessage = response.message;
                     } else {
                         grp.smessage = response.message;

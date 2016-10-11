@@ -45,12 +45,12 @@
                       return e;
               });
         }
-        function create(userName, groupName) {
+        function create(data) {
           return $http({
                       method: 'POST',
                       url: ROOT+'/api/v2/groups/group',
-                      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                      data:{userName:userName, groupName:groupName}
+                      headers: {'Content-Type': 'application/json;charset=UTF-8'},
+                      data: data
               }).then(
                   function success(response) {
                       return response.data;

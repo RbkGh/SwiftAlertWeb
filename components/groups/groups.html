@@ -5,6 +5,9 @@
     <div class="alert alert-danger text-center" ng-if="grp.emessage">
         {{grp.emessage}}
     </div>
+<div class="">
+    <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()">Add Group</button>
+</div>
 <table class="table table-striped">
     <thead>
         <th>
@@ -50,6 +53,30 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" id="delete">Update</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="addGroup" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content" ng-submit="grp.addGroupConfirm()">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a new Group</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="Group Name"></label>
+                    <input type="text" name="groupToBeAddeddName" class="form-control" ng-model="grp.groupToBeAddeddName" autofocus>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="delete">Add</button>
                 <button type="button" data-dismiss="modal" class="btn">Cancel</button>
             </div>
         </form>
