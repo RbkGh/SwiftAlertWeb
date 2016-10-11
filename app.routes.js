@@ -35,6 +35,12 @@
                     controllerAs: 'grp',
                     templateUrl: 'components/groups/groups.html'
                 })
+                .state('dash.group', {
+                    url: 'groups/:groupid',
+                    controller: 'groupController',
+                    controllerAs: 'gr',
+                    templateUrl: 'components/groups/group.html'
+                })
                 .state('dash.reports', {
                     url: 'reports',
                     controller: 'reportsController',

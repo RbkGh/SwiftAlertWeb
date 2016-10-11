@@ -11,19 +11,23 @@
 
         service.CreateGroupContact = CreateGroupContact;
         service.CreateMultipleGroupContact = CreateMultipleGroupContact;
-        service.GetGroupsContacts = GetGroupsContacts;
+        service.getGroupContacts = getGroupContacts;
 
         return service;
 
-        function GetGroupsContacts(groupId, callback) {
-            $http.get(ROOT+'/contacts/'+groupId)
-                .success(function (response) {
-                    if (response) {
-                        callback(response);
-                    }
-                }).
-                error(function (err){
-                    callback(false);
+        function getGroupContacts(groupId) {
+            return $http({
+                        method: 'GET',
+                        url: ROOT+'/contacts/'+groupId,
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        data:{}
+                }).then(
+                    function success(response) {
+                        return response.data.responseObject;
+                    },
+                    function fail(e) {
+                      console.log(e);
+                        return e;
                 });
         }
 

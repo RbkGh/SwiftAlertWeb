@@ -6,6 +6,8 @@ angular.module('swiftAlert')
         grp.editGroupConfirm = editGroupConfirm;
         grp.addGroup = addGroup;
         grp.addGroupConfirm = addGroupConfirm;
+        grp.uploadGroups = uploadGroups;
+        grp.uploadGroupsConfirm = uploadGroupsConfirm;
         grp.deleteGroup = deleteGroup;
         grp.deleteGroupConfirm = deleteGroupConfirm;
 
@@ -135,5 +137,11 @@ angular.module('swiftAlert')
                         grp.smessage = '';
                     }, 7000);
                 });
+        }
+
+        function uploadGroups($event) {
+            $('#uploadGroups').modal('show');
+        };
+        function uploadGroupsConfirm() {
         };
     }]);

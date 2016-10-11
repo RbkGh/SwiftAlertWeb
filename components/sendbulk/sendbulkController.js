@@ -11,7 +11,6 @@ angular.module('swiftAlert')
                 .then(function (groups) {
                    sb.groups = groups;
                    sb.groupid = sb.groups[0].groupId;
-                    console.log(groups);
                 })
                 .catch(function(response) {
                     console.error('Error', response.status, response.data);

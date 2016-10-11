@@ -1,13 +1,14 @@
 
 <div class="col-md-8 col-md-offset-2">
+    <h3 class="text-center title">Groups Management</h3>
     <div class="alert alert-success text-center" ng-if="grp.smessage">
             {{grp.smessage}}
     </div>
     <div class="alert alert-danger text-center" ng-if="grp.emessage">
             {{grp.emessage}}
     </div>
-    <div class="">
-        <button type="button" class="btn btn-primary pull-left" ng-click="grp.addGroup()"><i class="fa fa-upload"></i> Upload</button>
+    <div>
+        <!-- <button type="button" class="btn btn-primary pull-left" ng-click="grp.uploadGroups()"><i class="fa fa-upload"></i> Upload</button> -->
         <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()"><i class="fa fa-plus"></i> Add Group</button>
     </div>
     <br>
@@ -30,7 +31,7 @@
         <tbody>
             <tr ng-repeat="group in grp.groups" class="active">
                 <td>
-                    {{group.groupName}}
+                    <a ui-sref="dash.group({groupid: group.groupId})">{{group.groupName}}</a>
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}" ><i class="fa fa-edit"></i></button>
@@ -59,7 +60,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-warning" id="delete">Update</button>
+                    <button type="submit" class="btn btn-warning" id="update">Update</button>
                     <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                 </div>
             </form>
@@ -83,7 +84,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" id="delete">Add</button>
+                    <button type="submit" class="btn btn-success" id="add">Add</button>
                     <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                 </div>
             </form>
@@ -105,6 +106,28 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-danger" id="delete">Delete</button>
+                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="uploadGroups" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form class="modal-content" ng-submit="grp.uploadGroupsConfirm()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Upload Groups</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="file" name="groupsfile" class="form-control" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="upload">Upload</button>
                     <button type="button" data-dismiss="modal" class="btn">Cancel</button>
                 </div>
             </form>
