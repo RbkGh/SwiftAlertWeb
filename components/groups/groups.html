@@ -1,11 +1,10 @@
-<div class="alert alert-success text-center" ng-if="grp.smessage">
-    {{grp.smessage}}
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-</div>
-<div class="alert alert-danger text-center" ng-if="grp.emessage">
-    {{grp.emessage}}
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-</div>
+
+    <div class="alert alert-success text-center" ng-if="grp.smessage">
+        {{grp.smessage}}
+    </div>
+    <div class="alert alert-danger text-center" ng-if="grp.emessage">
+        {{grp.emessage}}
+    </div>
 <table class="table table-striped">
     <thead>
         <th>
@@ -24,10 +23,17 @@
                 {{group.groupName}}
             </td>
             <td>
+<<<<<<< HEAD
                 <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}" ><i class="fa fa-edit"></i></button>
             </td>
             <td>
                 <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}"><i class="fa fa-trash"></i></button>
+=======
+                <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-groupdatecreated="{{group.dateCreated}}"><i class="fa fa-edit"></i></button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" ><i class="fa fa-trash"></i></button>
+>>>>>>> 5babf06937a1a91302c44fa6e6df1bb2d73725be
             </td>
         </tr>
     </tbody>
