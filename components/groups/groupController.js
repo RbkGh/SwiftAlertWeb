@@ -2,9 +2,15 @@ angular.module('swiftAlert')
     .controller('groupController', ['$location', 'Auth', 'Contacts', 'Groups', '$localStorage', '$timeout', '$stateParams', function ($location, Auth, Contacts, Groups, $localStorage, $timeout, $stateParams) {
         var gr = this;
         gr.params = $stateParams;
+
         gr.addGroupContact = addGroupContact;
         gr.addGroupContactConfirm = addGroupContactConfirm;
+
         gr.editContact = editContact;
+        gr.editContactConfirm = editContactConfirm;
+
+        gr.deleteContact = deleteContact;
+        gr.deleteContactConfirm = deleteContactConfirm;
 
         initController();
         getGroupInfo()
@@ -75,12 +81,12 @@ angular.module('swiftAlert')
                 })
                 .catch(function (response) {
                     $('#addGroupContact').modal('hide');
-                    grp.emessage = 'An error occured try again';
-                    grp.sending = false;
+                    gr.emessage = 'An error occured try again';
+                    gr.sending = false;
                     initController();
                     $timeout(function(){
-                        grp.emessage = '';
-                        grp.smessage = '';
+                        gr.emessage = '';
+                        gr.smessage = '';
                     }, 7000);
                 });
         }
@@ -88,8 +94,79 @@ angular.module('swiftAlert')
         function editContact($event) {
             gr.contactToBeEditedFirstName = $($event.currentTarget).attr('data-firstname');
             gr.contactToBeEditedLastName = $($event.currentTarget).attr('data-lastname');
-            gr.contactToBeEditePhoneNumber = $($event.currentTarget).attr('data-phonenumber');
+            gr.contactToBeEditedPhoneNumber = $($event.currentTarget).attr('data-phonenumber');
+            gr.contactToBeEditedId = $($event.currentTarget).attr('data-contactid');
             $('#editContact').modal('show');
+        }
+
+        function editContactConfirm() {
+            var data = {
+                id: gr.contactToBeEditedId,
+                firstName: gr.contactToBeEditedFirstName,
+                lastName: gr.contactToBeEditedLastName,
+                contactPhoneNum: gr.contactToBeEditedPhoneNumber,
+                groupId: gr.params.groupid
+            }
+
+            Contacts.update(data)
+                .then(function (response) {
+                    if (response.status == 11) {
+                        gr.emessage = response.message;
+                    } else {
+                        gr.smessage = response.message;
+                    }
+                    $('#editContact').modal('hide');
+                    initController();
+                    $timeout(function(){
+                        gr.emessage = '';
+                        gr.smessage = '';
+                    }, 7000);
+                })
+                .catch(function(response) {
+                    $('#editContact').modal('hide');
+                    gr.emessage = 'An error occured try again';
+                    gr.sending = false;
+                    initController();
+                    $timeout(function(){
+                        gr.emessage = '';
+                        gr.smessage = '';
+                    }, 7000);
+                });
+        }
+        function deleteContactConfirm() {
+
+            Contacts.remove(gr.contactToBeDeletedId)
+                .then(function (response) {
+                    if (response.status == 11) {
+                        gr.emessage = response.message;
+                    } else {
+                        gr.smessage = response.message;
+                    }
+                    $('#deleteContact').modal('hide');
+                    initController();
+                    $timeout(function(){
+                        gr.emessage = '';
+                        gr.smessage = '';
+                    }, 7000);
+                })
+                .catch(function(response) {
+                    $('#deleteContact').modal('hide');
+                    gr.emessage = 'An error occured try again';
+                    gr.sending = false;
+                    initController();
+                    $timeout(function(){
+                        gr.emessage = '';
+                        gr.smessage = '';
+                    }, 7000);
+                });
+        }
+
+        function deleteContact($event) {
+            gr.contactToBeDeletedFirstName = $($event.currentTarget).attr('data-firstname');
+            gr.contactToBeDeletedLastName = $($event.currentTarget).attr('data-lastname');
+            gr.contactToBeDeletedPhoneNumber = $($event.currentTarget).attr('data-phonenumber');
+            gr.contactToBeDeletedId = $($event.currentTarget).attr('data-contactid');
+            $('#deleteContact').modal('show');
         }
 
     }]);
