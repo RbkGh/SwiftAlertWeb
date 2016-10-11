@@ -1,64 +1,105 @@
-
 <div class="col-md-8 col-md-offset-2">
     <h3 class="text-center title">Group Management</h3>
     <div class="alert alert-success text-center" ng-if="grp.smessage">
-            {{gr.smessage}}
+        {{gr.smessage}}
     </div>
     <div class="alert alert-danger text-center" ng-if="grp.emessage">
-            {{gr.emessage}}
+        {{gr.emessage}}
     </div>
     <div>
-        <button type="button" class="btn btn-primary pull-left" onclick="window.history.back();"><i class="fa fa-arrow-left"></i> Go Back</button>
-        <button type="button" class="btn btn-primary pull-right" ng-click="grp.addGroup()"><i class="fa fa-plus"></i> Add Contact</button>
-        <button type="button" class="btn btn-primary pull-right" ng-click="grp.uploadGroups()"><i class="fa fa-upload" style="padding-left:5px"></i> Upload Contacts</button>
+        <button type="button" class="btn btn-primary pull-left" onclick="window.history.back();"><i
+                class="fa fa-arrow-left"></i> Go Back
+        </button>
+        <button type="button" class="btn btn-primary pull-right" ng-click="gr.addGroupContact()"><i
+                class="fa fa-plus"></i> Add Contact
+        </button>
+        <button type="button" class="btn btn-primary pull-right" ng-click="gr.uploadGroups()"><i class="fa fa-upload"
+                                                                                                 style="padding-left:5px"></i>
+            Upload Contacts
+        </button>
     </div>
 
     <br>
     <br>
     <table class="table table-condensed ">
         <thead>
-            <tr class="info">
-                <th>
-                    First Name
-                </th>
-                <th>
-                    Last Name
-                </th>
-                <th>
-                    Mobile Number
-                </th>
-                <th>
-                    Edit
-                </th>
-                <th>
-                    Delete
-                </th>
-            </tr>
+        <tr class="info">
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Mobile Number
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
 
         </thead>
         <tbody>
-            <tr ng-repeat="contact in gr.contacts" class="active">
-                <td>
-                    {{contact.firstName}}
-                </td>
-                <td>
-                    {{contact.lastName}}
-                </td>
-                <td>
-                    {{contact.contactPhoneNum}}
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary" ng-click="gr.editContact($event)" data-contactid="{{contact.id}}"><i class="fa fa-edit"></i></button>
-                </td>
-                <td>
-                    <button type="button" class="btn btn-danger" ng-click="gr.deleteContact($event)" data-contactid="{{contact.id}}"><i class="fa fa-trash"></i></button>
-                </td>
-            </tr>
-            <tr ng-show="!gr.contacts.length" class="text-center">
-                <td>
-                    <h4>No contact here</h4>
-                </td>
-            </tr>
+        <tr ng-repeat="contact in gr.contacts" class="active">
+            <td>
+                {{contact.firstName}}
+            </td>
+            <td>
+                {{contact.lastName}}
+            </td>
+            <td>
+                {{contact.contactPhoneNum}}
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" ng-click="gr.editContact($event)"
+                        data-contactid="{{contact.id}}"><i class="fa fa-edit"></i></button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" ng-click="gr.deleteContact($event)"
+                        data-contactid="{{contact.id}}"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+        <tr ng-show="!gr.contacts.length" class="text-center">
+            <td>
+                <h4>No contact(s) here.</h4>
+            </td>
+        </tr>
         </tbody>
     </table>
+
+    <!-- Modal -->
+    <div id="addGroupContact" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <form class="modal-content" ng-submit="gr.addGroupContactConfirm()">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add a new Contact To Group</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="groupContactFirstName" class="form-control"
+                               ng-model="gr.firstNameInTemplate" autofocus placeholder="FirstName eg. John">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="groupContactLastName" class="form-control"
+                               ng-model="gr.lastNameInTemplate" autofocus placeholder="LastName eg. Akuffo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="groupContactPhoneNumber" class="form-control"
+                               ng-model="gr.phoneNumberInTemplate" autofocus placeholder="PhoneNumber eg. 0267777830">
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="add">Add</button>
+                    <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

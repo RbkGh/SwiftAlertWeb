@@ -12,6 +12,7 @@
         service.CreateGroupContact = CreateGroupContact;
         service.CreateMultipleGroupContact = CreateMultipleGroupContact;
         service.getGroupContacts = getGroupContacts;
+        service.UpdateSingleGroupContactConfirm = UpdateSingleGroupContactConfirm;
 
         return service;
 
@@ -54,7 +55,7 @@
                 });
         }
 
-        function UpdateSingleGroupContact(data, callback) {
+        function UpdateSingleGroupContactConfirm(data, callback) {
             $http.put(ROOT+'/contacts/contact/', data)
                 .success(function (response) {
                     if (response) {
