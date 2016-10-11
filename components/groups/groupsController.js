@@ -20,16 +20,19 @@ angular.module('swiftAlert')
             grp.groupToBeEditedId = $($event.currentTarget).attr('data-groupid');
             // console.log(grp.groupToBeEditedId );
             grp.groupToBeEditedName = $($event.currentTarget).attr('data-groupname');
+            grp.dateCreated = $($event.currentTarget).attr('data-datecreated');
+            grp.id = $($event.currentTarget).attr('data-id');
             $('#editGroup').modal('show');
         };
         function editGroupConfirm($event) {
             data = {
-                id: $localStorage.currentUser.userId,
+                id: grp.id,
                 userName: $localStorage.currentUser.userName,
                 groupId: grp.groupToBeEditedId,
                 groupName: grp.groupToBeEditedName,
-                dateCreated: moment().format()
+                dateCreated: grp.dateCreated
             }
+            console.info("data = "+JSON.stringify(data));
 
             Groups.update(data)
                 .then(function (response) {
@@ -50,9 +53,11 @@ angular.module('swiftAlert')
         function deleteGroup($event) {
             grp.groupToBeDeletedId = $($event.currentTarget).attr('data-groupid');
             grp.groupToBeDeletedName = $($event.currentTarget).attr('data-groupname');
+            grp.dateCreated = $($event.currentTarget).attr('data-datecreated');
+            grp.id = $($event.currentTarget).attr('data-id');
             $('#deleteGroup').modal('show');
         };
         function deleteGroupConfirm($event) {
-
+            console.info("data = "+JSON.stringify(data));
         };
     }]);

@@ -24,10 +24,10 @@
                 {{group.groupName}}
             </td>
             <td>
-                <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}" ><i class="fa fa-edit"></i></button>
             </td>
             <td>
-                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}"><i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}" data-datecreated="{{group.dateCreated}}" data-id="{{group.id}}"><i class="fa fa-trash"></i></button>
             </td>
         </tr>
     </tbody>
