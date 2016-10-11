@@ -12,6 +12,7 @@
         service.get = get;
         service.update = update;
         service.create = create;
+        service.remove = remove;
 
         return service;
 
@@ -46,8 +47,23 @@
               });
         }
         function create(data) {
-          return $http({
+            return $http({
                       method: 'POST',
+                      url: ROOT+'/api/v2/groups/group',
+                      headers: {'Content-Type': 'application/json;charset=UTF-8'},
+                      data: data
+              }).then(
+                  function success(response) {
+                      return response.data;
+                  },
+                  function fail(e) {
+                    console.log(e);
+                      return e;
+              });
+        }
+        function remove(data) {
+          return $http({
+                      method: 'DELETE',
                       url: ROOT+'/api/v2/groups/group',
                       headers: {'Content-Type': 'application/json;charset=UTF-8'},
                       data: data

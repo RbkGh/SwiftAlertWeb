@@ -6,6 +6,8 @@ angular.module('swiftAlert')
         grp.editGroupConfirm = editGroupConfirm;
         grp.addGroup = addGroup;
         grp.addGroupConfirm = addGroupConfirm;
+        grp.deleteGroup = deleteGroup;
+        grp.deleteGroupConfirm = deleteGroupConfirm;
 
         function initController() {
             Groups.get($localStorage.currentUser.userName)
@@ -41,6 +43,7 @@ angular.module('swiftAlert')
                     }, 7000);
                 })
                 .catch(function(response) {
+                    $('#addGroup').modal('hide');
                     grp.emessage = 'An error occured try again';
                     grp.sending = false;
                     initController();
@@ -53,7 +56,6 @@ angular.module('swiftAlert')
 
         function editGroup($event) {
             grp.groupToBeEditedId = $($event.currentTarget).attr('data-groupid');
-            // console.log(grp.groupToBeEditedId );
             grp.groupToBeEditedName = $($event.currentTarget).attr('data-groupname');
             grp.dateCreated = $($event.currentTarget).attr('data-datecreated');
             grp.id = $($event.currentTarget).attr('data-id');
@@ -83,6 +85,7 @@ angular.module('swiftAlert')
                     }, 7000);
                 })
                 .catch(function(response) {
+                    $('#editGroup').modal('hide');
                     grp.emessage = 'An error occured try again';
                     grp.sending = false;
                     initController();
@@ -100,6 +103,37 @@ angular.module('swiftAlert')
             $('#deleteGroup').modal('show');
         };
         function deleteGroupConfirm($event) {
-            console.info("data = "+JSON.stringify(data));
+            data = {
+                id: grp.id,
+                userName: $localStorage.currentUser.userName,
+                groupId: grp.groupToBeDeletedId,
+                groupName: grp.groupToBeDeletedName,
+                dateCreated: grp.dateCreated
+            }
+
+            Groups.remove(data)
+                .then(function (response) {
+                    if (response.status == 11) {
+                        grp.emessage = response.message;
+                    } else {
+                        grp.smessage = response.message;
+                    }
+                    $('#deleteGroup').modal('hide');
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
+                })
+                .catch(function(response) {
+                    $('#deleteGroup').modal('hide');
+                    grp.emessage = 'An error occured try again';
+                    grp.sending = false;
+                    initController();
+                    $timeout(function(){
+                        grp.emessage = '';
+                        grp.smessage = '';
+                    }, 7000);
+                });
         };
     }]);

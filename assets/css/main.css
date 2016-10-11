@@ -31,3 +31,6 @@ body {
     border: 1px solid transparent;
     border-radius: 0;
 }
+.btn,.modal-content {
+    border-radius: 0;
+}
