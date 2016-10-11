@@ -1,33 +1,38 @@
 angular.module('swiftAlert')
-    .controller('groupController', ['$location', 'Auth', 'Contacts', '$localStorage', '$timeout', '$stateParams', function ($location, Auth, Contacts, $localStorage, $timeout, $stateParams) {
+    .controller('groupController', ['$location', 'Auth', 'Contacts', 'Groups', '$localStorage', '$timeout', '$stateParams', function ($location, Auth, Contacts, Groups, $localStorage, $timeout, $stateParams) {
         var gr = this;
         gr.params = $stateParams;
         gr.addGroupContact = addGroupContact;
         gr.addGroupContactConfirm = addGroupContactConfirm;
 
         initController();
-
-
+        getGroupInfo()
+        console.log(gr.group);
         function initController() {
             Contacts.getGroupContacts(gr.params.groupid)
                 .then(function (contacts) {
                     gr.contacts = contacts;
-                    console.log(gr.contacts);
                 })
                 .catch(function (response) {
                     console.error('Error', response.status, response.data);
                 });
         };
 
-        // function initController() {
-        //     Groups.get($localStorage.currentUser.userName)
-        //         .then(function (groups) {
-        //            grp.groups = groups;
-        //         })
-        //         .catch(function(response) {
-        //             console.error('Error', response.status, response.data);
-        //         });
-        // };
+        function getGroupInfo() {
+            Groups.get($localStorage.currentUser.userName)
+                .then(function (groups) {
+                   gr.groups = groups;
+                   gr.groups.filter(function( group ) {
+                       if (group.groupId == gr.params.groupid) {
+                           gr.group = group;
+                           return group;
+                       }
+                    });
+                })
+                .catch(function(response) {
+                    console.error('Error', response.status, response.data);
+                });
+        };
 
         function addGroupContact() {
             $('#addGroupContact').modal('show');
