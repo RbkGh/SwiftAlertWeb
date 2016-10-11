@@ -1,1 +1,64 @@
-<h1>reports</h1>
+<div class="col-md-8 col-md-offset-2">
+    <h3 class="text-center title">Reports</h3>
+    <div class="alert alert-success text-center" ng-if="rep.smessage">
+        {{rep.smessage}}
+    </div>
+    <div class="alert alert-danger text-center" ng-if="rep.emessage">
+        {{rep.emessage}}
+    </div>
+
+    <br>
+    <br>
+    <table class="table table-condensed ">
+        <thead>
+        <tr class="info">
+            <th>
+                Date
+            </th>
+            <th>
+                Group Name
+            </th>
+            <th>
+                Number of Messages
+            </th>
+            <th>
+                Credit Before
+            </th>
+            <th>
+                Credit After
+            </th>
+            <th>
+                Sender ID
+            </th>
+        </tr>
+
+        </thead>
+        <tbody>
+        <tr ng-repeat="report in rep.reports" class="active">
+            <td>
+                {{report.dateCreated}}
+            </td>
+            <td>
+                {{report.groupName}}
+            </td>
+            <td>
+                {{report.noOfMessages}}
+            </td>
+            <td>
+                {{report.creditBefore}}
+            </td>
+            <td>
+                {{report.creditAfter}}
+            </td>
+            <td>
+                {{report.id}}
+            </td
+        </tr>
+        <tr ng-show="!rep.reports.length" class="text-center">
+            <td>
+                <h4>No report(s) here.</h4>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

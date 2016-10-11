@@ -9,7 +9,7 @@
         var service = {};
         var ROOT = "http://212.111.42.10:8080/swiftalertmain/api/v2"
 
-        service.GetAll = GetAll;
+        service.get = get;
         service.GetByMessageId = GetByMessageId;
 
         return service;
@@ -17,7 +17,7 @@
         function get(userName) {
             return $http({
                         method: 'GET',
-                        url: ROOT+'/messages/reports/'+userName,
+                        url: ROOT+'/messages/report/'+userName,
                         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
                         data:{}
                 }).then(
