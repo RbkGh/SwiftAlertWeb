@@ -18,8 +18,7 @@ angular.module('swiftAlert')
 
         function editGroup($event) {
             grp.groupToBeEditedId = $($event.currentTarget).attr('data-groupid');
-            grp.groupToBeEditedDateCreated = $($event.currentTarget).attr('data-groupdatecreated');
-            // console.log(grp.groupToBeEditedId );groupdatecreated
+            // console.log(grp.groupToBeEditedId );
             grp.groupToBeEditedName = $($event.currentTarget).attr('data-groupname');
             grp.dateCreated = $($event.currentTarget).attr('data-datecreated');
             grp.id = $($event.currentTarget).attr('data-id');
@@ -31,27 +30,18 @@ angular.module('swiftAlert')
                 userName: $localStorage.currentUser.userName,
                 groupId: grp.groupToBeEditedId,
                 groupName: grp.groupToBeEditedName,
-<<<<<<< HEAD
                 dateCreated: grp.dateCreated
-=======
-                dateCreated: grp.groupToBeEditedDateCreated
->>>>>>> 5babf06937a1a91302c44fa6e6df1bb2d73725be
             }
             console.info("data = "+JSON.stringify(data));
 
             Groups.update(data)
                 .then(function (response) {
                     if (response.status == 11) {
+                        console.log(response);
                         grp.emessage = response.message;
-                        initController();
                     } else {
                         grp.smessage = response.message;
-                        initController();
                     }
-                    $timeout(function(){
-                        grp.emessage = '';
-                        grp.smessage = '';
-                    }, 5000);
                     $('#editGroup').modal('hide');
 
                 })
