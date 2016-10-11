@@ -1,3 +1,11 @@
+<div class="alert alert-success text-center" ng-if="grp.smessage">
+    {{grp.smessage}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+<div class="alert alert-danger text-center" ng-if="grp.emessage">
+    {{grp.emessage}}
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
 <table class="table table-striped">
     <thead>
         <th>
@@ -16,10 +24,10 @@
                 {{group.groupName}}
             </td>
             <td>
-                <button type="button" class="btn btn-primary" ng-click="grp.editGroup('{{group.groupId}}', '{{group.groupName}}')"><i class="fa fa-edit"></i></button>
+                <button type="button" class="btn btn-primary" ng-click="grp.editGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}"><i class="fa fa-edit"></i></button>
             </td>
             <td>
-                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup('{{group.groupId}}', '{{group.groupName}}')"><i class="fa fa-trash"></i></button>
+                <button type="button" class="btn btn-danger" ng-click="grp.deleteGroup($event)" data-groupid="{{group.groupId}}" data-groupname="{{group.groupName}}"><i class="fa fa-trash"></i></button>
             </td>
         </tr>
     </tbody>
@@ -29,20 +37,20 @@
 <div id="editGroup" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
-        <form class="modal-content">
+        <form class="modal-content" ng-submit="grp.editGroupConfirm()">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Update Group, {{grp.groupToBeEditeddName}}</h4>
+                <h4 class="modal-title">Update Group, {{grp.groupToBeEditedName}}</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label for="Group Name"></label>
-                    <input type="text" name="groupToBeEditeddName"ng-model="grp.groupToBeEditeddName">
+                    <input type="text" name="groupToBeEditeddName" class="form-control" ng-model="grp.groupToBeEditedName" autofocus>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="btn btn-primary" id="delete">Update</button>
+                <button type="submit" class="btn btn-primary" id="delete">Update</button>
                 <button type="button" data-dismiss="modal" class="btn">Cancel</button>
             </div>
         </form>
@@ -59,6 +67,14 @@
                 <h4 class="modal-title">Delete Group, {{grp.groupToBeDeletedName}}</h4>
             </div>
             <div class="modal-body">
+                <div class="alert alert-success text-center" ng-if="grp.smessage">
+                    {{grp.smessage}}
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                </div>
+                <div class="alert alert-dange text-centerr" ng-if="grp.emessage">
+                    {{grp.emessage}}
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                </div>
                 Are you sure?
             </div>
             <div class="modal-footer">

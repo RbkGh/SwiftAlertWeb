@@ -7,11 +7,7 @@ angular.module('swiftAlert')
         initController();
 
         function initController() {
-            // Groups.getGroups($localStorage.currentUser.userName,function (result) {
-            //     sb.groups = result;
-            //     sb.groupid = sb.groups[0].groupId;
-            // });
-            Groups.getGroups($localStorage.currentUser.userName)
+            Groups.get($localStorage.currentUser.userName)
                 .then(function (groups) {
                    sb.groups = groups;
                    sb.groupid = sb.groups[0].groupId;
