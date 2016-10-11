@@ -37,9 +37,9 @@
 
         function createGroupContact(data) {
             return $http({
-                        method: 'GET',
+                        method: 'POST',
                         url: ROOT+'/contacts/contact',
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        headers: {'Content-Type': 'application/json;charset=UTF-8'},
                         data:data
                 }).then(
                     function success(response) {
