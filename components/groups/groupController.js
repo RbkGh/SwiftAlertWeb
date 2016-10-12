@@ -15,6 +15,9 @@ angular.module('swiftAlert')
         gr.deleteContact = deleteContact;
         gr.deleteContactConfirm = deleteContactConfirm;
 
+        gr.contactsListRaw = [];
+
+
         initController();
         getGroupInfo()
         function initController() {
@@ -30,15 +33,15 @@ angular.module('swiftAlert')
         function getGroupInfo() {
             Groups.get($localStorage.currentUser.userName)
                 .then(function (groups) {
-                   gr.groups = groups;
-                   gr.groups.filter(function( group ) {
-                       if (group.groupId == gr.params.groupid) {
-                           gr.group = group;
-                           return group;
-                       }
+                    gr.groups = groups;
+                    gr.groups.filter(function (group) {
+                        if (group.groupId == gr.params.groupid) {
+                            gr.group = group;
+                            return group;
+                        }
                     });
                 })
-                .catch(function(response) {
+                .catch(function (response) {
                     console.error('Error', response.status, response.data);
                 });
         };
@@ -87,7 +90,7 @@ angular.module('swiftAlert')
                     gr.emessage = 'An error occured try again';
                     gr.sending = false;
                     initController();
-                    $timeout(function(){
+                    $timeout(function () {
                         gr.emessage = '';
                         gr.smessage = '';
                     }, 7000);
@@ -120,22 +123,23 @@ angular.module('swiftAlert')
                     }
                     $('#editContact').modal('hide');
                     initController();
-                    $timeout(function(){
+                    $timeout(function () {
                         gr.emessage = '';
                         gr.smessage = '';
                     }, 7000);
                 })
-                .catch(function(response) {
+                .catch(function (response) {
                     $('#editContact').modal('hide');
                     gr.emessage = 'An error occured try again';
                     gr.sending = false;
                     initController();
-                    $timeout(function(){
+                    $timeout(function () {
                         gr.emessage = '';
                         gr.smessage = '';
                     }, 7000);
                 });
         }
+
         function deleteContactConfirm() {
 
             Contacts.remove(gr.contactToBeDeletedId)
@@ -147,17 +151,17 @@ angular.module('swiftAlert')
                     }
                     $('#deleteContact').modal('hide');
                     initController();
-                    $timeout(function(){
+                    $timeout(function () {
                         gr.emessage = '';
                         gr.smessage = '';
                     }, 7000);
                 })
-                .catch(function(response) {
+                .catch(function (response) {
                     $('#deleteContact').modal('hide');
                     gr.emessage = 'An error occured try again';
                     gr.sending = false;
                     initController();
-                    $timeout(function(){
+                    $timeout(function () {
                         gr.emessage = '';
                         gr.smessage = '';
                     }, 7000);
@@ -175,7 +179,38 @@ angular.module('swiftAlert')
         function uploadContacts() {
             $('#uploadContacts').modal('show');
         }
+
         function uploadContactsConfirm() {
+            requestData = {
+                groupId: gr.params.groupid,
+                userName: $localStorage.currentUser.userName,
+                contactsList: gr.contactsListRaw
+            };
+            console.log("FullRequest=" + JSON.stringify(requestData));
+            Contacts.addMultipleGroupContacts(requestData).then(function (response) {
+                if (response.status == 11) {
+                    gr.emessage = response.message;
+                } else {
+                    gr.smessage = response.message;
+                }
+                $('#uploadContacts').modal('hide');
+                initController();
+                $timeout(function () {
+                    gr.emessage = '';
+                    gr.smessage = '';
+                }, 7000);
+            })
+                .catch(function (response) {
+                    $('#uploadContacts').modal('hide');
+                    gr.emessage = 'An error occured try again';
+                    gr.sending = false;
+                    initController();
+                    $timeout(function () {
+                        gr.emessage = '';
+                        gr.smessage = '';
+                    }, 7000);
+                });
+
 
         }
     }]);

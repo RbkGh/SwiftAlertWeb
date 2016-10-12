@@ -143,5 +143,6 @@ angular.module('swiftAlert')
             $('#uploadGroups').modal('show');
         };
         function uploadGroupsConfirm() {
+
         };
     }]);
