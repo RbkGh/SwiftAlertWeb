@@ -17,7 +17,7 @@
         function changePassword(data) {
             return $http({
                         method: 'PUT',
-                        url: ROOT+'/passwordchange',
+                        url: ROOT+'/user/passwordchange',
                         headers: {'Content-Type': 'application/json;charset=UTF-8'},
                         data: data
                 }).then(

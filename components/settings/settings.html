@@ -2,11 +2,11 @@
     <div class="col-md-6 col-md-offset-3 form-wrapper">
         <form class="" ng-submit="sett.changePassword()">
             <h2 class="title ltitle text-center">Change Password</h2>
-            <div class="alert alert-success" ng-if="sb.smessage">
+            <div class="alert alert-success" ng-if="sett.smessage">
                 {{sett.smessage}}
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             </div>
-            <div class="alert alert-danger" ng-if="sb.emessage">
+            <div class="alert alert-danger" ng-if="sett.emessage">
                 {{sett.emessage}}
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             </div>
