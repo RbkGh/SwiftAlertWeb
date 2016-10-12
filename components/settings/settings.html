@@ -1,1 +1,26 @@
-<h1>settings</h1>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 form-wrapper">
+        <form class="" ng-submit="sett.changePassword()">
+            <h2 class="title ltitle text-center">Change Password</h2>
+            <div class="alert alert-success" ng-if="sb.smessage">
+                {{sett.smessage}}
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            </div>
+            <div class="alert alert-danger" ng-if="sb.emessage">
+                {{sett.emessage}}
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            </div>
+            <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" name="password" id="password" class="form-control input-controls" ng-model="sett.currentPassword" autofocus="" required="required">
+            </div>
+            <div class="form-group">
+                <label>New Password</label>
+                <input type="password" name="newpassword" id="newpassword" class="form-control input-controls" ng-model="sett.newPassword" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" name="button" class="btn btn-danger btn-block">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

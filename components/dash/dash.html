@@ -16,8 +16,8 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a><div class="dropdown-backdrop"></div>
                     <ul class="dropdown-menu dropdown-user">
-                        <!-- <li ui-sref-active="active"><a ui-sref=".settings"><i class="fa fa-gear fa-fw"></i> Settings</a></li> -->
-                        <!-- <li class="divider"></li> -->
+                        <li ui-sref-active="active"><a ui-sref=".settings"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li class="divider"></li>
                         <li><a href="#" ng-click="dash.logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -36,9 +36,9 @@
                 <li ui-sref-active="active"><a ui-sref=".groups"> <i class="fa fa-users"></i> Groups</a></li>
                 <li ui-sref-active="active"><a ui-sref=".reports"> <i class="fa fa-line-chart"></i> Reports</a></li>
             </ul>
-            <!-- <ul class="nav nav-sidebar">
+            <ul class="nav nav-sidebar">
                 <li ui-sref-active="active"><a ui-sref=".settings">Settings</a></li>
-            </ul> -->
+            </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div ui-view></div>

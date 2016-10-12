@@ -52,13 +52,13 @@
                     controller: 'reportController',
                     controllerAs: 'rept',
                     templateUrl: 'components/reports/report.html'
+                })
+                .state('dash.settings', {
+                    url: 'settings',
+                    controller: 'settingsController',
+                    controllerAs: 'sett',
+                    templateUrl: 'components/settings/settings.html'
                 });
-                // .state('dash.settings', {
-                //     url: 'settings',
-                //     controller: 'settingsController',
-                //     controllerAs: 'sett',
-                //     templateUrl: 'components/settings/settings.html'
-                // });
 
               $locationProvider.html5Mode(true);
               $urlRouterProvider.otherwise("/");
