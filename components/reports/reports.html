@@ -6,7 +6,11 @@
     <div class="alert alert-danger text-center" ng-if="rep.emessage">
         {{rep.emessage}}
     </div>
-
+    <div>
+        <button type="button" class="btn btn-primary pull-right" ng-click="rep.refresh()"><i
+                class="fa fa-refresh"></i> Refresh
+        </button>
+    </div>
     <br>
     <br>
     <table class="table table-condensed">

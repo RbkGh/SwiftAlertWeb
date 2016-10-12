@@ -13,7 +13,7 @@
             <input class="form-control" type="text" name="senderid" ng-model="sb.senderid" placeholder="Enter Sender Name" autofocus required>
         </div>
         <div class="form-group">
-            <textarea name="message" rows="8" ng-model="sb.message" class="form-control" required></textarea>
+            <textarea id="limitedtextarea" maxlength="160" name="message" rows="8" ng-model="sb.message" class="form-control" required></textarea>
         </div>
         <div class="form-group">
             <label for="groupid">Choose Group</label>
@@ -32,3 +32,10 @@
         </div>
     </div>
 </div>
+<script>
+$(function(){
+    $("#limitedtextarea").characterCounter({
+        counterFormat: '%1 characters remaining.'
+    });
+});
+</script>

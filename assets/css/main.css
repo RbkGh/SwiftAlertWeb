@@ -37,3 +37,6 @@ body {
 .clickable-row {
     cursor: pointer;
 }
+.counter {
+    color: #af4e4e;
+}

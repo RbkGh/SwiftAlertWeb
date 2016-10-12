@@ -1,9 +1,13 @@
 angular.module('swiftAlert')
-    .controller('sendbulkController', ['$location', 'Auth', 'Groups', 'Messages', '$localStorage', '$timeout', function($location, Auth, Groups, Messages, $localStorage, $timeout) {
+    .controller('sendbulkController', ['$location', 'Auth', 'Groups', 'Messages', '$localStorage', '$timeout', '$scope', function($location, Auth, Groups, Messages, $localStorage, $timeout, $scope) {
         var sb = this;
 
         sb.send = send;
-
+        $scope.$watch('message', function(newVal, oldVal) {
+            if(newVal == undefined){
+                $scope.value= oldVal;
+            }
+        });
         initController();
 
         function initController() {

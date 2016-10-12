@@ -2,6 +2,7 @@ angular.module('swiftAlert')
     .controller('reportController', ['$location', 'Auth', 'Reports', '$localStorage', '$stateParams', function($location, Auth, Reports, $localStorage, $stateParams) {
         var rept = this;
         rept.params = $stateParams;
+        
         initController();
 
 

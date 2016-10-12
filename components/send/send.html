@@ -13,10 +13,10 @@
             <input class="form-control" type="text" name="senderid" ng-model="snd.senderid" placeholder="Sender Name" autofocus required>
         </div>
         <div class="form-group">
-            <textarea name="message" rows="8" ng-model="snd.message" class="form-control" required></textarea>
+            <textarea id="limitedtextarea" name="message" maxlength="160" rows="8" ng-model="snd.message" class="form-control" required></textarea>
         </div>
         <div class="form-group">
-            <input class="form-control" type="tel" name="recievernumber" ng-model="snd.recievernumber" placeholder="Recipient Number" autofocus required>
+            <input class="form-control" type="tel" name="recievernumber" ng-model="snd.recievernumber" placeholder="Recipient Number" pattern=".{10,11}" required title="10 or 11 degits">
         </div>
 
         <div class="form-group">
@@ -27,3 +27,10 @@
         </div>
     </div>
 </div>
+<script>
+$(function(){
+    $("#limitedtextarea").characterCounter({
+        counterFormat: '%1 characters remaining.'
+    });
+});
+</script>

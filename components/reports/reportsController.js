@@ -2,6 +2,8 @@ angular.module('swiftAlert')
     .controller('reportsController', ['$location', 'Auth', 'Reports', '$localStorage', '$state', function($location, Auth, Reports, $localStorage, $state) {
         var rep = this;
         rep.viewReport = viewReport;
+        rep.refresh = refresh;
+
         initController();
 
 
@@ -13,6 +15,10 @@ angular.module('swiftAlert')
                 .catch(function(response) {
                     console.error('Error', response.status, response.data);
                 });
+        };
+        function refresh() {
+            rep.reports = [];
+            initController();
         };
 
         function viewReport($event) {
