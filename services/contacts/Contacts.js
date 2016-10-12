@@ -13,7 +13,7 @@
 
         service.getGroupContacts = getGroupContacts;
         service.createGroupContact = createGroupContact;
-        service.CreateMultipleGroupContact = CreateMultipleGroupContact;
+        service.addMultipleGroupContacts = addMultipleGroupContacts;
         service.update = update;
         service.remove = remove;
 
@@ -50,15 +50,19 @@
                         return e;
                 });
         }
-        function CreateMultipleGroupContact(data, callback) {
-            $http.post(ROOT+'/contacts', data)
-                .success(function (response) {
-                    if (response) {
-                        callback(response);
-                    }
-                }).
-                error(function (err){
-                    callback(false);
+        function addMultipleGroupContacts(data) {
+            return $http({
+                        method: 'POST',
+                        url: ROOT+'/contacts',
+                        headers: {'Content-Type': 'application/json;charset=UTF-8'},
+                        data:data
+                }).then(
+                    function success(response) {
+                        return response.data;
+                    },
+                    function fail(e) {
+                      console.log(e);
+                        return e;
                 });
         }
 

@@ -14,10 +14,7 @@
         <button type="button" class="btn btn-primary pull-right" ng-click="gr.addGroupContact()"><i
                 class="fa fa-plus"></i> Add Contact
         </button>
-        <!-- <button type="button" class="btn btn-primary pull-right" ng-click="gr.uploadGroups()"><i class="fa fa-upload"
-                                                                                                 style="padding-left:5px"></i>
-            Upload Contacts
-        </button> -->
+        <button type="button" class="btn btn-primary pull-right" ng-click="gr.uploadContacts()" style="margin-right:5px"><i class="fa fa-upload"></i> Upload Contacts</button>
     </div>
 
     <br>
@@ -150,6 +147,27 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger" id="delete">Delete</button>
+                <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Modal -->
+<div id="uploadContacts" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <form class="modal-content" ng-submit="grp.uploadContactsConfirm()">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Upload Groups</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="file" class="form-control" accept=".xls,.xlsx,.ods" file-read="" multiple="false" opts="gr.contactsListRaw" id="fileInput"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" id="upload">Upload</button>
                 <button type="button" data-dismiss="modal" class="btn">Cancel</button>
             </div>
         </form>

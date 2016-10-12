@@ -6,6 +6,9 @@ angular.module('swiftAlert')
         gr.addGroupContact = addGroupContact;
         gr.addGroupContactConfirm = addGroupContactConfirm;
 
+        gr.uploadContacts = uploadContacts;
+        gr.uploadContactsConfirm = uploadContactsConfirm;
+
         gr.editContact = editContact;
         gr.editContactConfirm = editContactConfirm;
 
@@ -169,4 +172,10 @@ angular.module('swiftAlert')
             $('#deleteContact').modal('show');
         }
 
+        function uploadContacts() {
+            $('#uploadContacts').modal('show');
+        }
+        function uploadContactsConfirm() {
+
+        }
     }]);
