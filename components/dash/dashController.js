@@ -3,6 +3,7 @@ angular.module('swiftAlert')
         var dash = this;
 
         dash.logout = logout;
+        dash.refreshBalance = refreshBalance;
         init();
 
         function init() {
@@ -14,6 +15,9 @@ angular.module('swiftAlert')
                     console.error('Error', response.status, response.data);
                 });
         }
+        function refreshBalance(){
+            init();
+        };
         function logout() {
             Auth.Logout();
             $location.path('/login');

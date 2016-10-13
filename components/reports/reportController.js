@@ -9,7 +9,9 @@ angular.module('swiftAlert')
         function initController() {
             Reports.getDetailed(rept.params.messageid)
                 .then(function (report) {
-                   rept.dreport = report.responseObject;
+                   rept.dreportMessage = report.responseObject.message;
+                   rept.dreportSenderId = report.responseObject.reportDetailedList[0].senderId;
+                   rept.dreport = report.responseObject.reportDetailedList;
                    console.log(report);
                 })
                 .catch(function(response) {

@@ -23,6 +23,7 @@ body {
  */
 .navbar-fixed-top {
   border: 0;
+  color: #FFFFFF;
 }
 
 /*
@@ -103,3 +104,5 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
