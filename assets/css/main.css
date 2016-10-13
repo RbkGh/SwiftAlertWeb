@@ -40,3 +40,15 @@ body {
 .counter {
     color: #af4e4e;
 }
+.navbar-left {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .navbar-right {
+        display: none;
+    }
+    .navbar-left {
+        display: block;
+    }
+}
