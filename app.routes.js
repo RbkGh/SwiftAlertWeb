@@ -60,7 +60,10 @@
                     templateUrl: 'components/settings/settings.html'
                 });
 
-              $locationProvider.html5Mode(true);
+              $locationProvider.html5Mode({
+                  enable : true,
+             
+              });
               $urlRouterProvider.otherwise("/");
         }]);
  })();
