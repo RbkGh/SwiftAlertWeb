@@ -2,6 +2,7 @@
  * Created by Rodney on 04-Feb-16.
  */
 //didn't make this an anonymous function.
+//made new changes,not fully tested yet
 (function () {
     'use strict';
     angular

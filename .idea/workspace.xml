@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60a441b7-a5e3-475d-a768-bd3c8e9a19d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.routes.js" afterPath="$PROJECT_DIR$/app.routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/dash/dash.html" afterPath="$PROJECT_DIR$/components/dash/dash.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/directives/fileRead/fileRead.js" afterPath="$PROJECT_DIR$/directives/fileRead/fileRead.js" />
     </list>
     <ignored path="swiftalert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +66,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
+            <state relative-caret-position="-123">
               <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileRead.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/directives/fileRead/fileRead.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -90,7 +107,6 @@
         <option value="$PROJECT_DIR$/components/groups/groupsController.js" />
         <option value="$PROJECT_DIR$/components/groups/group.html" />
         <option value="$PROJECT_DIR$/components/groups/groupController.js" />
-        <option value="$PROJECT_DIR$/directives/fileRead/fileRead.js" />
         <option value="$PROJECT_DIR$/components/dash/dash.html" />
         <option value="$PROJECT_DIR$/assets/css/dashboard.css" />
         <option value="$PROJECT_DIR$/components/reports/reports.html" />
@@ -100,6 +116,7 @@
         <option value="$PROJECT_DIR$/components/dash/dashController.js" />
         <option value="$PROJECT_DIR$/app.run.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/directives/fileRead/fileRead.js" />
       </list>
     </option>
   </component>
@@ -319,12 +336,12 @@
       <updated>1476282397892</updated>
       <workItem from="1476282400354" duration="6304000" />
       <workItem from="1476337926848" duration="13206000" />
-      <workItem from="1476549721171" duration="694000" />
+      <workItem from="1476549721171" duration="1124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20204000" />
+    <option name="totallyTimeSpent" value="20634000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
@@ -508,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/directives/fileRead/fileRead.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-844">
@@ -667,8 +676,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="-123">
           <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/directives/fileRead/fileRead.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
           <folding />
         </state>
       </provider>
