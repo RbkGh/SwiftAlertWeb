@@ -19,6 +19,7 @@ angular.module('swiftAlert')
                                 sett.emessage = response.message;
                             } else {
                                 sett.smessage = response.message;
+                                $location.path("/login");
                             }
                             $timeout(function () {
                                 sett.emessage = '';
